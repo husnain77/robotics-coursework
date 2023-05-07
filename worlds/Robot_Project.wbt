@@ -1,16 +1,156 @@
 #VRML_SIM R2023a utf8
+
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/balls/protos/FifaSoccerBall.proto"
+
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5773 0.5773 0.5773 2.0944
-  position 0 0 10
+  orientation -0.44895636906940917 -0.13720579186179216 0.8829568219067061 3.668726026370904
+  position 0.3843657754906822 0.40745897273537446 0.7370148758398074
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
+  floorSize 2 2
+  floorTileSize 1 1
+}
+FifaSoccerBall {
+  translation 0.62 0 0.11168714152750897
+}
+Robot {
+  translation 0 0 0.07
+  children [
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.7 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.2 0.05
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -9.710083404002035e-08
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.05999999999999987 0.04999999999999957 -1.5831450078523903e-06
+        rotation -1.098589467876275e-08 0.9999999999999998 -1.098593803556269e-08 1.5707997884818614
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0.3 0.2
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF Physics_wh Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -9.710083492819876e-08
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000000000003808 0.05000000000000845 -1.1790929611982227e-06
+        rotation -1.0985898632767869e-08 0.9999999999999998 -1.098593262023589e-08 1.5707999054177133
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0.3 0.2
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics DEF Physics_wh Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 9.710083407558182e-08
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.060000000000038085 -0.050000000000008454 -1.179092961045567e-06
+        rotation 1.0985901509629105e-08 0.9999999999999998 1.0985932134304502e-08 1.5707995993172885
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0.3 0.2
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics DEF Physics_wh Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 9.710083334469279e-08
+      }
+      device [
+        RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.059999999999999866 -0.04999999999999957 -1.583144961112002e-06
+        rotation 1.0985894811286358e-08 0.9999999999999999 1.0985938168085104e-08 1.5707997884818605
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0.3 0.2
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel
+        physics DEF Physics_wh Physics {
+        }
+      }
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
 }
