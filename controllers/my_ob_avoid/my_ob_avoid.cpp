@@ -8,7 +8,7 @@ using namespace webots;
 int main(int argc, char **argv) { 
   Robot *robot = new Robot();
   DistanceSensor *ds[2];
-  char dsNames[2][10] = {"df_right", "ds_left"};
+  char dsNames[2][10] = {"ds_right", "ds_left"};
   for (int i = 0; i < 2; i++) {
     ds[i]= robot->getDistanceSensor(dsNames[i]);
     ds[i]->enable(TIME_STEP);
