@@ -6,6 +6,6 @@ maximizedDockId: -1
 centralWidgetVisible: 1
 projectionMode: PERSPECTIVE
 orthographicViewHeight: 1
-textFiles: 0 "controllers/Python_controller/Python_controller.py" "controllers/my_ob_avoid/my_ob_avoid.cpp"
+textFiles: 2 "controllers/Python_controller/Python_controller.py" "controllers/my_ob_avoid/my_ob_avoid.cpp" "controllers/PY_script_1/PY_script_1.py"
 globalOptionalRendering: CoordinateSystem::JointAxes::CameraFrustums::DistanceSensorRays::Skeleton
 consoles: Console:All:All
