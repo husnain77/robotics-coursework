@@ -15,3 +15,13 @@ ds_right = robot.getDevice("touch sensor 2")
 ds_left.enable(64)
 ds_right.enable(64)
 
+# Set the velocity of the motors
+fl_motor.setPosition(float('inf'))
+fr_motor.setPosition(float('inf'))
+rr_motor.setPosition(float('inf'))
+rl_motor.setPosition(float('inf'))
+
+# Set initial velocity
+velocity = 1.0
+
+
