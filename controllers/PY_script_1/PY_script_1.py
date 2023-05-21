@@ -37,7 +37,9 @@ while robot.step(64) != -1:
     # Read the current sensor values
     left_value = ds_left.getValue()
     right_value = ds_right.getValue()
-    
+    # Print the current sensor values
+    print("Left sensor value:", left_value)
+    print("Right sensor value:", right_value)
     # Check if either touch sensor has been triggered
     if left_value > 0 or right_value > 0:
         # If either touch sensor is triggered, stop the robot and turn it around

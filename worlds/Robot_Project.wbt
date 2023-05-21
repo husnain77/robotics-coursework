@@ -9,8 +9,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.042602005935659826 0.9898509201488601 -0.1355736883422183 0.6147224446961351
-  position -10.933892512501474 0.502029041481433 8.285264126664426
+  orientation -0.04099902377717157 -0.9892715159071916 0.14021750198889563 5.708484740916974
+  position -1.9874541724975043 0.008076029501382254 1.442476879035983
 }
 TexturedBackground {
 }
@@ -24,8 +24,8 @@ RectangleArena {
   }
 }
 Robot {
-  translation -0.895247456180932 0.616557203749716 0.039762177633870494
-  rotation -0.0018933902073383954 0.001904592361084377 -0.9999963937942282 1.5708003857505757
+  translation 0.0010366521342204751 0.17479342117076901 0.03975818593373013
+  rotation 1.618523020484811e-05 -2.7273199455312856e-05 -0.9999999994971055 2.6611424188860524
   children [
     DEF Body Shape {
       appearance PBRAppearance {
@@ -38,7 +38,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 19123.369771308753
+        position 29514.886790786728
         anchor 0.06 0.05 -1.49514e-06
       }
       device [
@@ -47,8 +47,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05999999999970629 0.049996241484262745 -4.942949753612326e-07
-        rotation -0.6960689284608812 0.17599073610738444 -0.6960713380363408 2.793180233682115
+        translation 0.05999999999970629 0.04999834658777208 2.025422357795739e-06
+        rotation -0.7007864455365381 -0.13339158675048476 -0.7007888714416437 3.406809281713328
         children [
           DEF Wheel Shape {
             appearance PBRAppearance {
@@ -64,13 +64,13 @@ Robot {
         boundingObject USE Wheel
         physics DEF Physics_wh Physics {
         }
-        linearVelocity 1.239568757920467e-05 -1.7223652121988744e-05 5.671134936622001e-06
-        angularVelocity 0.000428742404241756 -9.999902890182168 -2.0869241652342023e-05
+        linearVelocity 0.04420152020009851 -0.01349663392349533 1.2894636676912167e-06
+        angularVelocity 0.8900022784984446 0.45597494501760627 0.4422831809395985
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 24644.96298904
+        position 38003.46370168817
         anchor -0.06 0.05 -1.49514e-06
       }
       device [
@@ -79,8 +79,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.05999999942556988 0.05000228015503114 1.4317783166279253e-06
-        rotation 0.6749899074541456 0.29794964169900773 0.6749923228055835 2.5624452682835335
+        translation -0.05999999942556988 0.0500007845854534 2.1312057453102953e-06
+        rotation 0.7005659044945715 0.13568829885143405 0.7005684113735838 2.871864316579798
         children [
           DEF Wheel Shape {
             appearance PBRAppearance {
@@ -97,13 +97,13 @@ Robot {
         boundingObject USE Wheel
         physics DEF Physics_wh Physics {
         }
-        linearVelocity 3.0688785064681125e-05 -1.722354230052098e-05 -9.671019729282174e-06
-        angularVelocity 0.00042874237115306485 -9.999902890596337 -2.0869261025136733e-05
+        linearVelocity 0.020027991921952898 0.03364316294701125 1.4093374227634315e-07
+        angularVelocity -0.8900792568041158 -0.4558927795440739 0.44224643345557796
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 24047.200404530246
+        position 37405.69883007865
         anchor -0.06 -0.05 -1.49514e-06
       }
       device [
@@ -112,8 +112,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.05999999980825865 -0.049997526704762554 1.667597590984171e-06
-        rotation 0.5527105155453862 0.6237148166931441 0.55271232430894 2.02624638307394
+        translation -0.05999999980825865 -0.04999913473560722 2.425499734992233e-06
+        rotation 0.6305696712166452 0.45250544421394645 0.6305717347760451 2.291724109977789
         children [
           DEF Wheel Shape {
             appearance PBRAppearance {
@@ -130,13 +130,13 @@ Robot {
         boundingObject USE Wheel
         physics DEF Physics_wh Physics {
         }
-        linearVelocity 3.312955248435991e-05 -1.6927834813564884e-05 -2.433509848791095e-06
-        angularVelocity 0.0004287346500375419 -9.99990287114448 -2.086532315815178e-05
+        linearVelocity -0.019249093876846937 0.013499661901866546 -1.1094759305661173e-06
+        angularVelocity -0.8900798943695959 -0.4558931636457469 0.44224611457209373
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 19139.686879857003
+        position 29531.201516451554
         anchor 0.06 -0.05 -1.49514e-06
       }
       device [
@@ -145,8 +145,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05999999970784975 -0.050003715763317975 -4.927864081236577e-07
-        rotation -0.4645382932224569 -0.7539276187921503 -0.46453990114129545 4.433609424875838
+        translation 0.05999999970784975 -0.0500016164201543 1.9975374318760623e-06
+        rotation -0.11427713390245735 -0.9868542865790898 -0.11427752940764668 4.699153022358977
         children [
           DEF Wheel Shape {
             appearance PBRAppearance {
@@ -163,13 +163,13 @@ Robot {
         boundingObject USE Wheel
         physics DEF Physics_wh Physics {
         }
-        linearVelocity 1.2439009761324968e-05 -1.6927972519555625e-05 1.462499589165416e-05
-        angularVelocity 0.0004287346839644483 -9.999902872879446 -2.086532056962481e-05
+        linearVelocity 0.004924410036300388 -0.03364032891997482 -2.588075582712496e-07
+        angularVelocity 0.8900015605611726 0.4559745227897441 0.44228350462157484
       }
     }
     TouchSensor {
-      translation 0.049999980220549856 -0.09999051050884034 -3.325385525485003e-07
-      rotation -1.9338194670307497e-09 -1.6437971070233862e-09 1 -1.5707953072882948
+      translation 0.05002282965530093 -0.10004470392855955 -4.021656919706018e-07
+      rotation 1.9338224183214304e-09 1.6437957163399388e-09 -1 1.5707953072882768
       children [
         Shape {
           appearance PBRAppearance {
@@ -185,12 +185,12 @@ Robot {
       }
       physics Physics {
       }
-      linearVelocity -3.591855453066727e-07 -1.6039930838894486e-05 -1.5142811951029952e-05
-      angularVelocity 0.000419609714881161 9.593420644246223e-05 -8.771293942983563e-06
+      linearVelocity -0.016728435983375207 -0.03977879397822415 1.0261204949029926e-07
+      angularVelocity -3.8731631006426824e-05 4.073389620979656e-05 0.44119965564536684
     }
     TouchSensor {
-      translation -0.05000001970649537 -0.09999051219844868 -3.6867363207432335e-07
-      rotation -1.8610930539647513e-09 -1.8967081965400772e-09 1 -1.570795307286419
+      translation -0.05002966873645877 -0.1000413055918046 -4.3393164317340194e-07
+      rotation 1.8610930315080339e-09 1.896708212915234e-09 -1 1.5707953072863623
       children [
         Shape {
           appearance PBRAppearance {
@@ -206,19 +206,25 @@ Robot {
       }
       physics Physics {
       }
-      linearVelocity 4.841150147427696e-07 -1.6042664488270794e-05 2.6368952322330934e-05
-      angularVelocity 0.0004196069450778629 9.593196988726576e-05 -8.771279797167602e-06
+      linearVelocity -0.03687203701182117 -0.0005003129675453923 -5.317508325524214e-06
+      angularVelocity -3.873163103105464e-05 4.073389624288859e-05 0.44119965564506575
     }
   ]
   boundingObject USE Body
   physics Physics {
   }
   controller "PY_script_1"
-  linearVelocity 2.864479904474137e-08 -1.697061500562213e-05 -4.060024260127193e-06
-  angularVelocity 0.0004196076084299024 9.593278641886383e-05 -8.770369124873687e-06
+  linearVelocity 0.012474521859102881 2.127783028853857e-06 -1.0300266032759673e-06
+  angularVelocity -3.873163102988194e-05 4.073389624743677e-05 0.4411996556445315
 }
 OilBarrel {
   translation 0 -0.75 0.1
+  height 0.2
+  radius 0.09
+}
+OilBarrel {
+  translation -0.43 0.89 0.1
+  name "oil barrel(3)"
   height 0.2
   radius 0.09
 }
@@ -229,8 +235,20 @@ OilBarrel {
   radius 0.09
 }
 OilBarrel {
-  translation 0.52 -0.87 0.1
+  translation -0.09 0.42 0.1
+  name "oil barrel(5)"
+  height 0.2
+  radius 0.09
+}
+OilBarrel {
+  translation -0.69 -0.51 0.1
   name "oil barrel(2)"
+  height 0.2
+  radius 0.09
+}
+OilBarrel {
+  translation 0.52 -0.87 0.1
+  name "oil barrel(4)"
   height 0.2
   radius 0.09
 }
