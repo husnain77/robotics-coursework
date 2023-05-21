@@ -24,23 +24,43 @@ rl_motor.setPosition(float('inf'))
 # Set initial velocity
 velocity = 1.0
 
+# Set retreat distance and turn duration
+retreat_distance = 0.5
+turn_duration = 1.0
+
+# Variables to store previous sensor values
+previous_left_value = 0
+previous_right_value = 0
+
 # Loop over the simulation time steps
 while robot.step(64) != -1:
-    print("Left touch sensor value:", ds_left.getValue())
-    print("Right touch sensor value:", ds_right.getValue())
+    # Read the current sensor values
+    left_value = ds_left.getValue()
+    right_value = ds_right.getValue()
+    
     # Check if either touch sensor has been triggered
-    if ds_left.getValue() > 0 or ds_right.getValue() > 0:
+    if left_value > 0 or right_value > 0:
         # If either touch sensor is triggered, stop the robot and turn it around
         fl_motor.setVelocity(-velocity)
         fr_motor.setVelocity(-velocity)
         rl_motor.setVelocity(-velocity)
         rr_motor.setVelocity(-velocity)
         robot.step(1000)  # wait for the robot to stop moving
-        fl_motor.setVelocity(-velocity*2)
-        fr_motor.setVelocity(velocity/2)
-        rl_motor.setVelocity(-velocity*2)
-        rr_motor.setVelocity(velocity/2)
-        robot.step(1000)  # wait for the robot to turn around
+        
+        # Retreat a specific distance
+        fl_motor.setVelocity(-velocity)
+        fr_motor.setVelocity(-velocity)
+        rl_motor.setVelocity(-velocity)
+        rr_motor.setVelocity(-velocity)
+        robot.step(int(retreat_distance * 1000))  # retreat for a specific distance
+        
+        # Execute a turn in an alternate direction
+        fl_motor.setVelocity(-velocity)
+        fr_motor.setVelocity(velocity)
+        rl_motor.setVelocity(-velocity)
+        rr_motor.setVelocity(velocity)
+        robot.step(int(turn_duration * 1000))  # wait for the robot to turn around
+        
     else:
         # Otherwise, move the robot forward
         fl_motor.setVelocity(velocity)
@@ -48,32 +68,41 @@ while robot.step(64) != -1:
         rl_motor.setVelocity(velocity)
         rr_motor.setVelocity(velocity)
 
-    # Check if the robot is too close to an obstacle based on touch sensors
-    # Here we assume that a touch sensor is triggered when its value is 1 (meaning contact with an obstacle)
-    if ds_left.getValue() > 0 and ds_right.getValue() > 0:
-        # If both touch sensors are triggered (i.e., the robot has collided with an obstacle),
+    # Check if the robot has collided with an obstacle
+    if (previous_left_value > 0 and left_value > 0) or (previous_right_value > 0 and right_value > 0):
+        # If both touch sensors were triggered in the previous step and are still triggered,
         # stop the robot and turn it around
         fl_motor.setVelocity(-velocity)
         fr_motor.setVelocity(-velocity)
         rl_motor.setVelocity(-velocity)
         rr_motor.setVelocity(-velocity)
         robot.step(1000)  # wait for the robot to stop moving
+        
+        # Execute a turn in an alternate direction
         fl_motor.setVelocity(-velocity)
         fr_motor.setVelocity(velocity)
         rl_motor.setVelocity(-velocity)
         rr_motor.setVelocity(velocity)
-        robot.step(1000)  # wait for the robot to turn around
-    elif ds_left.getValue() > 0:
-        # If only the left touch sensor is triggered, turn right to avoid the obstacle
+        robot.step(int(turn_duration * 1000))  # wait for the robot to turn around
+        
+    elif previous_left_value > 0 and left_value > 0:
+        # If only the left touch sensor was triggered in the previous step and is still triggered,
+        # turn right to avoid the obstacle
         fl_motor.setVelocity(velocity)
         fr_motor.setVelocity(-velocity)
         rl_motor.setVelocity(velocity)
         rr_motor.setVelocity(-velocity)
-        robot.step(1000)  # wait for the robot to turn
-    elif ds_right.getValue() > 0:
-        # If only the right touch sensor is triggered, turn left to avoid the obstacle
+        robot.step(int(turn_duration * 1000))  # wait for the robot to turn
+        
+    elif previous_right_value > 0 and right_value > 0:
+        # If only the right touch sensor was triggered in the previous step and is still triggered,
+        # turn left to avoid the obstacle
         fl_motor.setVelocity(-velocity)
         fr_motor.setVelocity(velocity)
         rl_motor.setVelocity(-velocity)
         rr_motor.setVelocity(velocity)
-        robot.step(1000)  # wait for the robot to turn
+        robot.step(int(turn_duration * 1000))  # wait for the robot to turn
+        
+    # Update the previous sensor values
+    previous_left_value = left_value
+    previous_right_value = right_value
